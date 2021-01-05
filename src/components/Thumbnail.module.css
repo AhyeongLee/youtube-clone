@@ -1,0 +1,13 @@
+li {
+  list-style: none;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  object-fit: contain;
+}
+.title {
+  font-weight: 500;
+}

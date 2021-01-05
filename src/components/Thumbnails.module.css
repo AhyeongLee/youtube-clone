@@ -1,0 +1,6 @@
+.list {
+  background-color: rgb(19, 19, 19);
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+}
