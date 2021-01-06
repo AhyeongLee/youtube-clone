@@ -57,15 +57,16 @@ const App = () => {
   }
 
   const handlePlay = (e) => {
+
     if (e.currentTarget.tagName !== 'LI') {
       return;
-      
     }
+
+    window.scrollTo(0,0);
     const id = e.currentTarget.id;
     const item = items.find(item => item.id === id);
 
     setPlayer(prevState => {
-      console.log(item);
       return item ? {
         url: playUrl + item.id,
         title: item.title,

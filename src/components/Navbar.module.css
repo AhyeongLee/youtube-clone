@@ -63,3 +63,12 @@ nav {
   border-radius: 50%;
   cursor: pointer;
 }
+
+@media screen and (max-width: 750px) {
+  .searchInput {
+    width: 30vw;
+  }
+  .searchBtn {
+    width: 2rem;
+  }
+}
