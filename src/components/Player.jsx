@@ -37,25 +37,21 @@ const Player = (props) => {
             <div className={styles.contour}></div>
             <div 
                 className={styles.short}
-                ref={shortRef}
-            >{props.player.description.slice(0,100)+'...'}
+                ref={shortRef}>{props.player.description.slice(0,100)+'...'}
             </div>
             <div
                 ref={moreRef} 
                 className={styles.more} 
-                onClick={handleMore}
-            >더보기
+                onClick={handleMore}>더보기
             </div>
             <div 
                 ref={descriptionRef}
-                className={styles.description}
-            >{props.player.description}
+                className={styles.description}>{props.player.description}
             </div>
             <div
                 ref={lessRef} 
                 className={styles.less} 
-                onClick={handleLess}
-            >접기
+                onClick={handleLess}>접기
             </div>
         </div>
 
