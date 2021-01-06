@@ -1,24 +1,37 @@
-import React, { Component } from 'react';
+import React, { createRef, useState } from 'react';
 import styles from './Navbar.module.css';
 
-class Navbar extends Component {
-    render() {
-        return (
-            <nav className={styles.nav}> 
-                <div className={styles.logoContainer}>
-                    <img className={styles.icon} src="/images/youtube_icon.png" alt="youtube icon"/>
-                    <span className={styles.logo}>YouTube</span>
-                </div>
-                <div className={styles.searchContainer}>
-                    <input className={styles.searchInput} type="text" placeholder="검색" />
-                    <div className={styles.searchBtn}><i className="fas fa-search"></i></div>
-                </div>
-                <div className={styles.user}>
-                    <i className="fas fa-user"></i>
-                </div>   
-            </nav>
-        );
-    }
+const Navbar = (props) => {
+    const inputRef = React.createRef();
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const keyword = inputRef.current.value;
+        props.onSearch(keyword);
+
+    };
+    const handleLogoClick = () => {
+        window.location = '/';
+    };
+    
+    return (
+        <nav className={styles.nav}> 
+            <div 
+                className={styles.logoContainer}
+                onClick={handleLogoClick}>
+                <img className={styles.icon} src="/images/youtube_icon.png" alt="youtube icon"/>
+                <span className={styles.logo}>YouTube</span>
+            </div>
+            <form className={styles.searchContainer} onSubmit={handleSearch}>
+                <input ref={inputRef} className={styles.searchInput} type="text" placeholder="검색" />
+                <button className={styles.searchBtn}><i className="fas fa-search"></i></button>
+            </form>
+            <div className={styles.user}>
+                <i className="fas fa-user"></i>
+            </div>   
+        </nav>
+    );
+    
 }
 
 export default Navbar;

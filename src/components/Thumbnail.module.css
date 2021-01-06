@@ -1,13 +1,16 @@
 li {
   list-style: none;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
+  transition: all 0.2s ease-out;
 }
 
-.img {
-  object-fit: contain;
+li:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
-.title {
-  font-weight: 500;
+
+.thumbnails {
+  object-fit: contain;
+  width: 100%;
 }

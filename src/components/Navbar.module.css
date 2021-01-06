@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 nav {
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,6 +41,7 @@ nav {
 }
 
 .searchBtn {
+  cursor: pointer;
   text-align: center;
   width: 3rem;
   height: 2rem;
@@ -48,6 +49,7 @@ nav {
   font-size: 1rem;
   padding: 0.5rem;
   color: rgb(187, 187, 187);
+  border-style: none;
 }
 
 .user {
@@ -59,4 +61,5 @@ nav {
   font-size: 1.5rem;
   background-color: rgb(75, 75, 75);
   border-radius: 50%;
+  cursor: pointer;
 }

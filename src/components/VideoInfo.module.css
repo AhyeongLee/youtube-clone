@@ -1,0 +1,20 @@
+.info {
+  display: flex;
+  height: 8rem;
+  padding: 1rem;
+}
+.title {
+  font-weight: 600;
+}
+.channel {
+  font-weight: 400;
+  color: rgb(187, 187, 187);
+  margin: 1rem 0;
+}
+
+.channelThumbnails {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
