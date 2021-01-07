@@ -122,4 +122,4 @@ const setThumbnails = (items) => {
 };
 ```
 
-[Fetch in fetch in a loop JS - Stack Overflow](https://www.notion.so/javascript-Fetch-in-fetch-in-a-loop-JS-Stack-Overflow-a7620f841133452787ec9f60c451e12f)
+[Fetch in fetch in a loop JS - Stack Overflow](https://stackoverflow.com/questions/60710423/fetch-in-fetch-in-a-loop-js)
