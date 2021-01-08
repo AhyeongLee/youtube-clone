@@ -1,13 +1,13 @@
-import React, { createRef, useState } from 'react';
+import React, { createRef, memo, useState } from 'react';
 import styles from './Navbar.module.css';
 
-const Navbar = (props) => {
+const Navbar = memo(({ onSearch }) => {
     const inputRef = React.createRef();
 
     const handleSearch = (e) => {
         e.preventDefault();
         const keyword = inputRef.current.value;
-        props.onSearch(keyword);
+        onSearch(keyword);
 
     };
     const handleLogoClick = () => {
@@ -32,6 +32,6 @@ const Navbar = (props) => {
         </nav>
     );
     
-}
+});
 
 export default Navbar;

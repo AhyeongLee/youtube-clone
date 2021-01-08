@@ -1,13 +1,7 @@
 .container {
-  position: absolute;
-
-  max-width: 0;
-  max-height: 0;
-  overflow: hidden;
-
   display: flex;
   flex-direction: column;
-  align-items: center;
+  flex: 1 1 70%;
 }
 .video {
   position: relative;
@@ -65,10 +59,4 @@ iframe {
   cursor: pointer;
   color: rgb(187, 187, 187);
   margin: 1rem;
-}
-
-.container.open {
-  max-width: 100vw;
-  max-height: 100vh;
-  position: relative;
 }

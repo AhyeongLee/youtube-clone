@@ -1,6 +1,6 @@
 import React from 'react';
-import Player from './Player';
-import Thumnails from './Thumbnails';
+import Player from '../player/Player';
+import Thumnails from '../thumbnails/Thumbnails';
 import styles from './Main.module.css';
 
 const Main = (props) => {
@@ -10,10 +10,8 @@ const Main = (props) => {
 
     return (
         <div className={styles.main}>
-            <Player 
-                player={props.player}
-                isPlayerOpened={props.isPlayerOpened}
-                />
+            {props.isPlayerOpened ? <Player player={props.player}/> : null}
+            
             <Thumnails 
                 player={props.player} 
                 onPlay={handlePlay} 

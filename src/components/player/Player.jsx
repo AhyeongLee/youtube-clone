@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Player.module.css';
 
-const Player = (props) => {
+const Player = ({ player }) => {
     const descriptionRef = React.createRef();
     const shortRef = React.createRef();
     const moreRef = React.createRef();
@@ -23,36 +23,43 @@ const Player = (props) => {
     }
 
     return (
-        <div className={props.isPlayerOpened ? styles.container.open : styles.container}>   
+        <div className={styles.container}>   
             <div className={styles.video}>
                 <iframe
                     className={styles.iframe}
-                    src={props.player.url}
+                    src={player.url}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowFullScreen> 
                 </iframe>
             </div>
             
-            <div className={styles.title}>{props.player.title}</div>
+            <div className={styles.title}>{player.title}</div>
             <div className={styles.contour}></div>
-            <div 
-                className={styles.short}
-                ref={shortRef}>{props.player.description.slice(0,100)+'...'}
-            </div>
-            <div
-                ref={moreRef} 
-                className={styles.more} 
-                onClick={handleMore}>더보기
-            </div>
-            <div 
-                ref={descriptionRef}
-                className={styles.description}>{props.player.description}
-            </div>
-            <div
-                ref={lessRef} 
-                className={styles.less} 
-                onClick={handleLess}>접기
-            </div>
+            {
+                player.description.length > 100 ? 
+                ( <> 
+                    <div 
+                        className={styles.short}
+                        ref={shortRef}>{player.description.slice(0,100)+'...'}
+                    </div>
+                    <div
+                        ref={moreRef} 
+                        className={styles.more} 
+                        onClick={handleMore}>더보기
+                    </div>
+                    <div 
+                        ref={descriptionRef}
+                        className={styles.description}>{player.description}
+                    </div>
+                    <div
+                        ref={lessRef} 
+                        className={styles.less} 
+                        onClick={handleLess}>접기
+                    </div>
+                </>) :
+                (<div className={styles.more} >{player.description}</div>)
+            }
+                
         </div>
 
     );

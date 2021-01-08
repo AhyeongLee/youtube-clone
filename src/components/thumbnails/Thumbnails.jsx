@@ -1,8 +1,8 @@
-import React, { Component, useState } from 'react';
+import React, { Component, memo, useState } from 'react';
 import styles from './Thumbnails.module.css';
-import Thumbnail from './Thumbnail';
+import Thumbnail from '../thumbnail/Thumbnail';
 
-const Thumnails = (props) => {
+const Thumnails = memo((props) => {
     const handlePlay = (e) => {
         props.onPlay(e);
 
@@ -13,13 +13,13 @@ const Thumnails = (props) => {
             <ul className={styles.list}>
                 {props.items.map(item => {
                     return (
-                        <Thumbnail onPlay={handlePlay} item={item}/>
+                        <Thumbnail onPlay={handlePlay} key={item.id} item={item}/>
                     );
                 })}
             </ul>
         </>
     );
     
-}
+});
 
 export default Thumnails;
